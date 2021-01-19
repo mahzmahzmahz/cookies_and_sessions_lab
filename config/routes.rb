@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :products, only: [:index]
+  get '/', to: 'products#index', as: 'products'
 
-  get '/products/add' to: "products#add", as: 'add'
+  post '/products', to: "products#add", as: 'add_product'
 
 end
